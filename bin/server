@@ -1,0 +1,38 @@
+#!/usr/bin/env node
+const yargs = require("yargs");
+const init = require("../src/index");
+
+const argv = yargs
+  .option("r", {
+    alias: "root",
+    default: process.cwd(),
+    demand: "false",
+    type: "string",
+    describe: "静态文件根目录"
+  })
+  .option("o", {  // 需要用到代理
+    alias: "host",
+    default: "localhost",
+    demand: "false",
+    type: "string",
+    describe: "监听主机"
+  })
+  .option("p", {
+    alias: "port",
+    default: 8080,
+    demand: "false",
+    type: "number",
+    describe: "监听端口"
+  })
+  .option("c", {
+    alias: "child",
+    demand: "false",
+    type: "boolean",
+    default: false,
+    description: "是否子进程运行"
+  })
+  .usage("happy-server [options]")
+  .example("happy-server -o 127.0.0.1 -p 9000", "监听本机的9000端口")
+  .help('h').argv;
+
+init(argv);

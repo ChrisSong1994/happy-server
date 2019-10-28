@@ -1,0 +1,29 @@
+{
+  "name": "happy-server",
+  "version": "1.0.0",
+  "description": "static file server",
+  "main": "src/index.js",
+  "scripts": {
+    "test": "node ./src/index.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/song111/happy-server.git"
+  },
+  "keywords": [
+    "file",
+    "server"
+  ],
+  "author": "chrissong",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/song111/happy-server/issues"
+  },
+  "homepage": "https://github.com/song111/happy-server#readme",
+  "dependencies": {
+    "colors": "^1.4.0",
+    "handlebars": "^4.4.5",
+    "mime": "^2.4.4",
+    "yargs": "^14.2.0"
+  }
+}
