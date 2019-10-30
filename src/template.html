@@ -1,3 +1,11 @@
+<!--
+ * @Author: your name
+ * @Date: 2019-10-28 16:14:21
+ * @LastEditTime: 2019-10-30 11:08:32
+ * @LastEditors: your name
+ * @Description: In User Settings Edit
+ * @FilePath: /happy-server/src/template.html
+ -->
 <!DOCTYPE html>
 <html lang="en">
   <head>
@@ -6,7 +14,6 @@
     <meta http-equiv="X-UA-Compatible" content="ie=edge" />
     <title>Happy Server</title>
     <style>
-      
       .icon {
         display: inline-block;
         height: 30px;
@@ -15,7 +22,7 @@
         vertical-align: middle;
         background-position: 100%;
       }
-      td{
+      td {
         padding: 0 20px;
       }
       .icon-folder {
@@ -27,7 +34,7 @@
     </style>
   </head>
   <body>
-    <h3 class="path-name">{{ pathName }}</h3>
+    <h3 class="path-name">当前路径： {{ pathName }}</h3>
     <table>
       <thead>
         <tr>
@@ -41,12 +48,15 @@
         <tr>
           {{#if folder}}
           <td><i class="icon icon-folder"></i></td>
+          <td class="file-size">
+            <code>--</code>
+          </td>
           {{else}}
           <td><i class="icon icon-file"></i></td>
-          {{/if}}
           <td class="file-size">
-            <code>{{ size }}</code>
+            <code>{{ size }}B</code>
           </td>
+          {{/if}}
           <td class="display-name">
             <a href="{{ url }}">{{ name }}</a>
           </td>
